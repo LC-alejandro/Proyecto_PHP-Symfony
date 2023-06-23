@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ parent() }}
+    {% if(app.request.get('exception').statusCode == "404") %}
+
+    <h1>404 Not Found</h1>
+<p>No se ha definido una ruta para la uri solicitada</p>
+{% endif %}
+    {% if(app.request.get('exception').statusCode == "403") %}
+
+
+        <h1>403 Not Forbidden</h1>
+
+        <p>Acceso no autorizado</p>
+
+    {% endif %}
+{%  endblock %}
+{% block footer %}
+{% endblock %}

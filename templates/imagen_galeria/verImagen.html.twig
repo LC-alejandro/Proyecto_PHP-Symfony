@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    {% if(imagen != 'novalida') %}
+<div class="container">
+    <div class="col-xs-12 col-sm-8 col-sm-push-2">
+        <h1>IMAGEN DE LA GALERIA</h1>
+        <img style="width: 700px" src="{{ asset('uploads/imagenes_subidas/'~imagen.nombre) }}">
+    </div>
+</div>
+    {% else %}
+
+        <h1>404 Not Found</h1>
+
+        <p>No se ha encontrado ningún elemento con id {{ id }}</p>
+
+    {% endif %}
+
+{% endblock %}
+{% block footer %}
+{% endblock %}
